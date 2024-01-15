@@ -1,0 +1,11 @@
+.our_team{
+    display: flex;
+}
+
+.teammate{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}

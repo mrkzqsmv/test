@@ -1,0 +1,40 @@
+.all{
+    display: flex;
+}   
+
+.first{
+    width: 50%;
+    height: 100vh;
+    background-color: #fff;
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    padding-left: 5%;
+    padding-top: 12%;
+}
+
+.title{
+    color: #212F4F;
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.paragraf{
+    color: grey;
+    font-size: 17px;
+    font-weight: 200;
+    margin-top: 20px;
+}
+
+.username{
+    color: #48639C;
+}
+
+.second{
+    width: 50%;
+    height: 100vh;
+    background-color: #f1f1f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}   
