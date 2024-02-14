@@ -217,10 +217,11 @@ const isCustomerUSA = customers.some(e => {
 
 //TASK 6
 
-// orders.forEach(e => {
-//     console.log(`Order ${e.orderId} by ${e.customerId}: ${e.quantity} * ${e.product} for ${e.price} each`);
-// })
-
+orders.forEach(order => {
+    const customerName = customers.find(customer => customer.id === order.customerId).name;
+    console.log(`Order ${order.orderId} by ${customerName}: ${order.quantity} x ${order.product} for $${order.price} each.`);
+});
+  
 
 //TASK 7
 
