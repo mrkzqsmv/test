@@ -1,6 +1,12 @@
 //CUSTOMERS DATA
 
-const customers = [{
+const customers: {
+    id: number,
+    name: string,
+    email: string,
+    location.city: string,
+    location.country: string,
+} [] = [{
         id: 1,
         name: 'Bob',
         email: 'bob@example.com',
@@ -95,7 +101,13 @@ const customers = [{
 
 //ORDER ID
 
-const orders = [{
+const orders: {
+    orderId: number,
+    customerId: number,
+    product: string,
+    quantity: number,
+    price: number
+} [] = [{
         orderId: 101,
         customerId: 1,
         product: 'Dizüstü Bilgisayar',
@@ -173,55 +185,51 @@ const allCustomersEmails = customers.map(e => {
     return e.email
 })
 
-// console.log(allCustomersEmails);
+console.log(allCustomersEmails);
 
 //TASK 2
 
-const highPriceOrders = orders.filter(e => {
-    if (e.price > 1000) {
-        return e.price
-    }
-})
+const highPriceOrders: Order[] = orders.filter((e) => {
+    return e.price * e.quantity > 1000;
+});
 
-// console.log(highPriceOrders);
+console.log(highPriceOrders);
+
 
 //TASK 3
 
-const aliceCustomer = customers.find(e => {
-    if (e.name == 'Alice') {
-        console.log(e);
+const aliceCustomer: Customer = customers.find((currentCustomer): Customer => {
+    if (currentCustomer.name == 'Alice') {
+        console.log(currentCustomer);
+        return currentCustomer
     }
-})
+});
 
-// console.log(aliceCustomer);
+console.log(aliceCustomer);
+
 
 //TASK 4
 
-const findOrderById = orders.findIndex(e => {
-    if (e.orderId == 102) {
-        return e
+const findOrderById: number = orders.findIndex((currentOrder): Order => {
+    if (currentOrder.orderId == 102) {
+        return currentOrder
     }
 })
 
-// console.log(findOrderById);
+console.log(findOrderById);
 
 //TASK 5
 
-const isCustomerUSA = customers.some(e => {
-    if (e.location.country == 'USA') {
-        return true
-    }
-})
+const isCustomerUSA: boolean = customers.some((e: Customer) => e.location.country == 'USA')
 
-// console.log(isCustomerUSA);
+console.log(isCustomerUSA);
 
 //TASK 6
 
-orders.forEach(order => {
-    const customerName = customers.find(customer => customer.id === order.customerId).name;
+orders.forEach((order: Order) => {
+    const customerName: string = customers.find((customer: Customer) => customer.id === order.customerId).name;
     console.log(`Order ${order.orderId} by ${customerName}: ${order.quantity} x ${order.product} for $${order.price} each.`);
 });
-  
 
 //TASK 7
 
